@@ -28,6 +28,7 @@ a {
 
 #main{
   color: var(--color-light-text);
+  text-align: center;
 }
 
 /* End of Main Content Properties*/
