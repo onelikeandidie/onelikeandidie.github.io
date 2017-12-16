@@ -1,0 +1,103 @@
+/* Defined CSS Variables so the code is easier to read*/
+
+:root {
+  --color-background: #000000;
+  /*#000000 Registration Black - Background*/
+  --color-nav-background: #FFFFFF;
+  /*#CF5C36 Dark Coral - Nav Background*/
+  --color-descrip-background: #343434;
+  /*#EEE5E9 Platinum - Description Background*/
+  --color-dark-text: #343434;
+  /*#7C7C7C Trolley Grey - Dark Text*/
+  --color-light-text: white;
+  /*#EFC88B Pale Gold - Light Text*/
+  --color-big-title1: linear-gradient(to bottom, var(--color-nav-background), var(--color-background));
+  /*#EEE5E9 to #EFC88B Plat to Gold Grad - Big Title*/
+  --color-big-title2: linear-gradient(to bottom, var(--color-background), var(--color-nav-background));
+  /*#EEE5E9 to #EFC88B Gold to Plat Grad - Big Title*/
+  --font-nav-font: "Motiva Sans", Sans-serif;
+  /*"Motiva Sans", Sans-serif - Nav Font*/
+  --font-text: proxima-nova, "Helvetica Neue", Helvetica, sans-serif;
+  /*proxima-nova, "Helvetica Neue", Helvetica, sans-serif - Text and Small Headings*/
+  --font-title: "Motiva Sans", Sans-serif;
+  /*silkscreennormal - Title Font*/
+}
+/* The @media checks for the window width to make, in this case, the text smaller or bigger*/
+
+@media screen and (min-width:960px) {
+  :root {
+    /* The text size will be bigger if the window size is well, bigger*/
+    --font-size-text: 30px;
+    --font-size-quote: 25px;
+    --font-size-heading: 40px;
+    --font-size-nav-title: 35px;
+    --font-size-nav-text: 20px;
+    --font-size-title: 150px;
+    --font-size-sub-title: 80px;
+  }
+}
+
+@media screen and (max-width:960px) {
+  :root {
+    --font-size-text: 20px;
+    --font-size-quote: 15px;
+    --font-size-heading: 30px;
+    --font-size-nav-title: 30px;
+    --font-size-nav-text: 15px;
+    --font-size-title: 100px;
+    --font-size-sub-title: 50px;
+  }
+}
+
+/* End of CSS Variables*/
+
+/* WRAPPED ELEMENTS*/
+
+/* Here is a way for all the wrapped content to resize if we resize the window so everything fits in it until a certain point*/
+
+@media screen and (max-width: 960px) {
+  .wrapped40 {
+    width: 80%;
+    margin: auto;
+  }
+  .wrapped80 {
+    width: 90%;
+    margin: auto;
+  }
+  .wrapped60 {
+    width: 85%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .wrapped40 {
+    width: 55%;
+    margin: auto;
+  }
+  .wrapped80 {
+    width: 90%;
+    margin: auto;
+  }
+  .wrapped60 {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .wrapped40 {
+    width: 40%;
+    margin: auto;
+  }
+  .wrapped80 {
+    width: 80%;
+    margin: auto;
+  }
+  .wrapped60 {
+    width: 60%;
+    margin: auto;
+  }
+}
+
+/* END OF WRAPPED ELEMENTS*/

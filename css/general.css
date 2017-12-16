@@ -1,0 +1,31 @@
+/* These rules apply to every element in the HTML unless they say otherwise*/
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-descrip-background);
+  text-decoration: none;
+}
+
+/* END OF THE GENERAL RULES*/
+
+/* The fixed elements like the nav bar are really fixed on the browser so when you scroll*/
+
+/* NAVIGATION BAR */
+
+/* END OF NAVIGATION BAR*/
+
+/* Main Content Properties*/
+
+/* End of Main Content Properties*/
+
+/* End of Footer Properties*/
