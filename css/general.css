@@ -26,6 +26,10 @@ a {
 
 /* Main Content Properties*/
 
+#main{
+  color: var(--color-light-text);
+}
+
 /* End of Main Content Properties*/
 
 /* End of Footer Properties*/
