@@ -16,21 +16,214 @@ a {
   text-decoration: none;
 }
 
+.left-side, .right-side {
+  height: 100vh;
+  position: relative;
+}
+
+.left-side {
+  width: 30%;
+  float: left;
+}
+
+.right-side {
+  width: 65%;
+  float: right;
+}
+
+.title-box {
+  margin: 40px 0;
+}
+
+.title {
+  color: var(--color-light-text);
+}
+
+.subtitle {
+  color: var(--color-almost-hidden-text);
+}
+
+.columned {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.transparency-overlay.to-right {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, var(--color-background), transparent 5%);
+  pointer-events: none;
+}
+
 /* END OF THE GENERAL RULES*/
 
 /* The fixed elements like the nav bar are really fixed on the browser so when you scroll*/
 
-/* NAVIGATION BAR */
+/* Nav bar properties */
+
+#nav_bar {
+  position: fixed;
+}
 
 /* END OF NAVIGATION BAR*/
 
 /* Main Content Properties*/
 
-#main{
+#main {
+  position: relative;
   color: var(--color-light-text);
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
+#back_canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Button Menu Properties */
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.button-list a {
+  position: relative;
+  margin: 16px;
+  color: var(--color-light-text);
+  font-weight: bolder;
+  font-size: 64px;
+}
+
+.button-list a::before {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  color: var(--color-hidden-text);
+  margin-right: 16px;
+  font-size: 64px;
+}
+
+.button-list a::first-letter {
+  color: var(--color-dark-text);
+}
+
+.button-list a.selected::before {
+  content: ">";
+  color: var(--color-dark-text);
+}
+
+/* End of Button Menu Properties */
+
+/* Menu Descriptions Properties */
+
+.menu-descriptions {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.menu-descriptions div {
+  position: relative;
+  bottom: -100%;
+  opacity: 0;
+  display: none;
+  height: 200px;
+  width: 600px;
+  margin: 60px;
+  transition: bottom 0.3s 0s;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.menu-descriptions div p {
+  font-weight: bolder;
+  font-size: 26px;
+}
+
+/* .menu-descriptions div::after {
+  content: "";
+  position: absolute;
+  height: 8px;
+  background-color: var(--color-light-text);
+  top: -16px;
+  left: 100px;
+  right: 100px;
+} */
+
+.menu-descriptions div.show {
+  bottom: 0;
+  opacity: 1;
+  display: block;
+  transition: bottom 0.3s ease 1s;
+}
+
+/* End of Menu Descriptions Properties */
+
 /* End of Main Content Properties*/
+
+/* Footer properties */
+
+footer {
+  position: fixed;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  background: var(--color-hidden-text);
+  height: 80px;
+  color: var(--color-descrip-background);
+  transition: bottom 0.3s;
+  text-align: center;
+  font-size: 20px;
+}
+
+footer:hover {
+  bottom: 0;
+}
+
+footer a {
+  color: var(--color-light-text);
+}
+
+footer a:hover {
+  color: var(--color-dark-text);
+}
+
+footer p {
+  margin: 6px;
+}
+
+footer div:first-child p {
+  display: inline-block;
+}
+
+footer div:last-child p {
+  display: inline-block;
+}
+
+footer p .heart {
+  color: var(--color-nav-background);
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+footer p:hover .heart {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
 
 /* End of Footer Properties*/

@@ -1,25 +1,30 @@
 /* Defined CSS Variables so the code is easier to read*/
 
 :root {
+  /* Colours from https://coolors.co/ff99c8-fcf6bd-d0f4de-a9def9-e4c1f9-1c3144 */
   --color-background: #000000;
   /*#000000 Registration Black - Background*/
-  --color-nav-background: #FFFFFF;
+  --color-nav-background: #CF5C36;
   /*#CF5C36 Dark Coral - Nav Background*/
-  --color-descrip-background: #343434;
+  --color-descrip-background: #EEE5E9;
   /*#EEE5E9 Platinum - Description Background*/
-  --color-dark-text: #343434;
-  /*#7C7C7C Trolley Grey - Dark Text*/
-  --color-light-text: white;
-  /*#EFC88B Pale Gold - Light Text*/
-  --color-big-title1: linear-gradient(to bottom, var(--color-nav-background), var(--color-background));
+  --color-dark-text: #FF99C8;
+  /*#FF99C8 Carnation Pink - Dark Text*/
+  --color-hidden-text: #1C3144;
+  /*#1C3144 Prussian Blue - Hidden Text*/
+  --color-almost-hidden-text: #595959;
+  /*#595959 Davys Grey - Almost Hidden Text*/
+  --color-light-text: #A9DEF9;
+  /*#A9DEF9 Uranian Blue - Light Text*/
+  --color-big-title1: linear-gradient(to bottom, var(--color-nav-background), var(--color-dark-text));
   /*#EEE5E9 to #EFC88B Plat to Gold Grad - Big Title*/
   --color-big-title2: linear-gradient(to bottom, var(--color-background), var(--color-nav-background));
   /*#EEE5E9 to #EFC88B Gold to Plat Grad - Big Title*/
-  --font-nav-font: "Motiva Sans", Sans-serif;
+  --font-nav-font: "JetBrains-Mono", "Motiva Sans", Sans-serif;
   /*"Motiva Sans", Sans-serif - Nav Font*/
-  --font-text: proxima-nova, "Helvetica Neue", Helvetica, sans-serif;
+  --font-text: "JetBrains-Mono", proxima-nova, "Helvetica Neue", Helvetica, sans-serif;
   /*proxima-nova, "Helvetica Neue", Helvetica, sans-serif - Text and Small Headings*/
-  --font-title: "Motiva Sans", Sans-serif;
+  --font-title: "JetBrains-Mono", "Motiva Sans", Sans-serif;
   /*silkscreennormal - Title Font*/
 }
 /* The @media checks for the window width to make, in this case, the text smaller or bigger*/
