@@ -1,0 +1,22 @@
+/* This is where I Import all the fonts for the website */
+@font-face {
+    font-family: 'JetBrains-Mono';
+    src: 
+        url('Fonts/JetBrainsMono/JetBrainsMono-Regular.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-Bold.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-ExtraBoldItalic.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-ExtraLight.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-ExtraLightItalic.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-Italic.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-Light.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-LightItalic.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-Medium.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-LightItalic.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-SemiBold.woff2'), 
+        url('Fonts/JetBrainsMono/JetBrainsMono-SemiBoldItalic.woff2'),
+        url('Fonts/JetBrainsMono/JetBrainsMono-Thin.woff2'),
+        url('Fonts/JetBrainsMono/JetBrainsMono-Thin.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
