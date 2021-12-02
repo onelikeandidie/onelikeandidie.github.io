@@ -59,9 +59,9 @@ let states = {
  * @param {bool} talk Wether to do the talk animation
  */
 let select = function (index, talk = true) {
-    //if (selected == index) {
-    //    return;
-    //}
+    if (selected == index) {
+        return;
+    }
     selected = index;
     for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i];
@@ -107,17 +107,15 @@ let setup_hotkeys = function () {
             // Up is index subtraction
             // Down is index addition
             case "ARROWUP":
-            case "ARROWRIGHT":
+            case "ARROWLEFT":
                 if (selected > 0) {
-                    selected--;
-                    select(selected);
+                    select(selected - 1);
                 }
                 break;
             case "ARROWDOWN":
-            case "ARROWLEFT":
+            case "ARROWRIGHT":
                 if (selected < (buttons.length - 1)) {
-                    selected++;
-                    select(selected);
+                    select(selected + 1);
                 }
                 break;
         
@@ -128,16 +126,14 @@ let setup_hotkeys = function () {
 }
 
 let setup_menu = function () {
+    // This is called when a button is pressed
+    let click_handler = (index) => {
+        select(index);
+    }
     // Setup the button events
-    buttons[0].addEventListener("click", (event) => {
-        select(0);
-    });
-    buttons[1].addEventListener("click", (event) => {
-        select(1);
-    });
-    buttons[2].addEventListener("click", (event) => {
-        select(2);
-    });
+    buttons[0].addEventListener("click", () => { click_handler(0) });
+    buttons[1].addEventListener("click", () => { click_handler(1) });
+    buttons[2].addEventListener("click", () => { click_handler(2) });
 }
 
 let setup_scene = function () {
