@@ -24,6 +24,9 @@ let descriptions = [
     $(".menu-descriptions #description_games"),
     $(".menu-descriptions #description_about")
 ]
+// Select the typewriter p
+/** @type {HTMLElement[]} */
+let typewriter_divs = Array.from(document.querySelectorAll(".typewriter"));
 /** I'm sure canvas is 1 element so I infer its type
  * @type {Element} */
 let ctx = canvas;
@@ -72,6 +75,7 @@ let select = function (index, talk = true) {
         } else {
             button.classList.add("selected");
             descrp.classList.add("show");
+            animate_typewriter(descrp);
         }
     }
     if (talk) {
@@ -79,6 +83,29 @@ let select = function (index, talk = true) {
         click_audio.play();
     }
     update_scene();
+}
+
+/**
+ * @param {HTMLElement} div
+ */
+let animate_typewriter = async function (div) {
+    let text = div.innerHTML;
+    let shown_text = "";
+    let tag_regex = /<\w+?(.+?)?>.+?<\/\w+?>/g;
+    for (let i = 0; i < text.length; i++) {
+        let remaining_text = text.substring(i);
+        let matches = remaining_text.match(tag_regex);
+        if (matches != undefined && matches.length > 0) {
+            let found_tag_at = text.indexOf(matches[0], i);
+            if (i >= found_tag_at) {  
+                i = found_tag_at + matches[0].length;
+                console.log(found_tag_at, matches[0].length, matches[0]);
+            }
+        }
+        shown_text = text.substring(0, i);
+        div.innerHTML = shown_text;
+        await util.sleep(15);
+    }
 }
 
 let update_scene = function () {
@@ -91,7 +118,6 @@ let setup_hotkeys = function () {
     window.onkeyup = (event) => {
         /** @type {KeyboardEvent} */
         let key_event = event;
-        console.log(key_event.key);
         // This will switch the currently selected section
         switch (key_event.key.toUpperCase()) {
             case "F":
@@ -154,11 +180,11 @@ let setup_scene = function () {
     scene.add( pointLight2 );
     // Create a sample cube
     const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshPhongMaterial({color: 0xb9d7e4, flatShading: true});
+    const material = new THREE.MeshPhongMaterial({color: 0xfA9DEF, flatShading: true});
     let cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
     // Adjust Camera
-    camera.position.z = 5;
+    camera.position.z = 5 + (1 - ctx.clientWidth / 250);
     // Start the animation loop
     function animate() {
         requestAnimationFrame(animate);
@@ -215,6 +241,6 @@ window.onload = function () {
     setup_hotkeys();
     // Setup menu
     setup_menu();
-    // Setup scene
+    // Setup scene for desktop users
     setup_scene();
 }
