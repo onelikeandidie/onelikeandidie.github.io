@@ -31,6 +31,22 @@ a {
   float: right;
 }
 
+@media screen and (max-width: 960px) {
+    .left-side, .right-side {
+        height: auto;
+    }
+
+    .left-side {
+        width: 100%;
+        float: none;
+    }
+
+    .right-side {
+        width: 100%;
+        float: none;
+    }
+}
+
 .title-box {
   margin: 40px 0;
 }
@@ -57,6 +73,10 @@ a {
   pointer-events: none;
 }
 
+.typewriter {
+    text-align: left;
+}
+
 /* END OF THE GENERAL RULES*/
 
 /* The fixed elements like the nav bar are really fixed on the browser so when you scroll*/
@@ -80,10 +100,23 @@ a {
   overflow: hidden;
 }
 
+@media screen and (max-width: 920px) {
+    #main {
+        height: auto;
+    }
+}
+
 #back_canvas {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 960px) {
+    #back_canvas {
+        position: relative;
+        height: 100px;
+    }
 }
 
 /* Button Menu Properties */
@@ -115,14 +148,30 @@ a {
   font-size: 64px;
 }
 
-.button-list a::first-letter {
+.button-list a p::first-letter {
   color: var(--color-dark-text);
 }
 
 .button-list a.selected::before {
   content: ">";
-  color: var(--color-dark-text);
+  /* color: var(--color-dark-text); */
 }
+
+@media screen and (max-width: 960px) {
+    .button-list {
+        flex-direction: row;
+    }
+
+    .button-list a {
+        font-size: 32px;
+    }
+
+    .button-list a::before {
+        left: -18px;
+        font-size: 28px;
+    }
+}
+
 
 /* End of Button Menu Properties */
 
@@ -170,6 +219,16 @@ a {
   opacity: 1;
   display: block;
   transition: bottom 0.3s ease 1s;
+}
+
+@media screen and (max-width: 960px) {
+    .menu-descriptions {
+        position: relative;
+    }
+
+    .menu-descriptions div {
+        height: auto;
+    }
 }
 
 /* End of Menu Descriptions Properties */
